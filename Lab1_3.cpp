@@ -91,15 +91,15 @@ int main(int argc, char **argv) {
                         for (auto &elem: main_buf) {
                             data.write(&elem, sizeof(char)); // запись преобразованного текста
                         }
+                        /* Закрытие файла */
+                        data.close();
+                        if (data.is_open() != 0) {
+                            throw SyntaxException("Unable to close specified file", 4, argc);
+                        }
                     } else {
                         throw SyntaxException(
                                 "Unable to open or create specified file. Check that the specified file exists",
-                                4, argc);                      // Аварийное завершение программы с выводом справки
-                    }
-                    /* Закрытие файла */
-                    data.close();
-                    if (data.is_open() != 0) {
-                        throw SyntaxException("Unable to close specified file", 8, argc);
+                                5, argc);                      // Аварийное завершение программы с выводом справки
                     }
                 }
             } break;
