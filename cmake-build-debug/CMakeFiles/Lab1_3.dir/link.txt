@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Lab1_3.dir/Lab1_3.cpp.o CMakeFiles/Lab1_3.dir/SyntaxException.cpp.o -o Lab1_3 
