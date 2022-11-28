@@ -40,7 +40,7 @@ int NextRand(int start_key = 0) {
    * это необходимо для получения псевдо-случайной последовательности.
    * 3) При каждом вызове производится расчет следующего члена ПСП по формуле Д.Г. Лемера. Константы удовлетворяют
    * условиям получения "хорошей" последовательности, для данной функции период равен 7875.
-   * Дата: 01 / 06 / 2022 Версия 1.01
+   * Дата: 27 / 11 / 2022 Версия 1.01
    * Автор: Студент НГТУ ИРИТ, Халеев А. А. гр. 21-ИВТз
    * Исправления: нет
    ****************************************************************************************************************/
@@ -115,6 +115,7 @@ int main(int argc, char **argv) {
                         if (data.is_open() != 0) {
                             throw SyntaxException("Unable to close specified file", 4, argc);
                         }
+                        std::cout<<"The text, finded in: '"<<argv[2]<<"', encoded/decoded successfully\n\n";
                     } else {
                         throw SyntaxException(
                                 "Unable to open or create specified file. Check that the specified file exists",
